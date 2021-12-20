@@ -1,0 +1,17 @@
+{
+  "defaultSeverity": "error",
+  "extends": ["tslint-config-airbnb", "tslint-react", "tslint-config-prettier", "tslint-react-hooks"],
+  "jsRules": {},
+  "rules": {
+    "variable-name": false,
+    "function-name": false,
+    "jsx-no-lambda": false,
+    "no-duplicate-imports": [true, {"allow-namespace-imports": true}],
+    "jsx-boolean-value": [true, "never"],
+    "import-name": false,
+    "react-hooks-nesting": "error"
+  },
+  "rulesDirectory": [],
+  "include": ["src/index.tsx"],
+  "exclude": ["node_modules"]
+}

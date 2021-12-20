@@ -1,0 +1,17 @@
+.container {
+  margin: 0 auto;
+
+  &--flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  &--flex-mobile {
+    flex-direction: column;
+
+    @include mq(tablet) {
+      flex-direction: row;
+    }
+  }
+}

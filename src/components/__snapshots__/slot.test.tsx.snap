@@ -1,0 +1,192 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Slot component Slot should take a snapshot 1: Slot 1 1`] = `
+<DocumentFragment>
+  <div
+    class="slot-wrapper"
+  >
+    <div
+      class="slot"
+      style="transition: transform .5s;"
+    >
+      <div
+        class="slot__cell"
+      >
+        0
+      </div>
+      <div
+        class="slot__cell"
+      >
+        1
+      </div>
+      <div
+        class="slot__cell"
+      >
+        2
+      </div>
+      <div
+        class="slot__cell"
+      >
+        3
+      </div>
+      <div
+        class="slot__cell"
+      >
+        4
+      </div>
+      <div
+        class="slot__cell"
+      >
+        5
+      </div>
+      <div
+        class="slot__cell"
+      >
+        6
+      </div>
+      <div
+        class="slot__cell"
+      >
+        7
+      </div>
+      <div
+        class="slot__cell"
+      >
+        8
+      </div>
+      <div
+        class="slot__cell"
+      >
+        9
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Slot component Slot should take a snapshot 2: Slot 2 1`] = `
+<DocumentFragment>
+  <div
+    class="slot-wrapper"
+  >
+    <div
+      class="slot"
+      style="transition: transform .6s;"
+    >
+      <div
+        class="slot__cell"
+      >
+        0
+      </div>
+      <div
+        class="slot__cell"
+      >
+        1
+      </div>
+      <div
+        class="slot__cell"
+      >
+        2
+      </div>
+      <div
+        class="slot__cell"
+      >
+        3
+      </div>
+      <div
+        class="slot__cell"
+      >
+        4
+      </div>
+      <div
+        class="slot__cell"
+      >
+        5
+      </div>
+      <div
+        class="slot__cell"
+      >
+        6
+      </div>
+      <div
+        class="slot__cell"
+      >
+        7
+      </div>
+      <div
+        class="slot__cell"
+      >
+        8
+      </div>
+      <div
+        class="slot__cell"
+      >
+        9
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Slot component Slot should take a snapshot for initial state: Slot initial 1`] = `
+<DocumentFragment>
+  <div
+    class="slot-wrapper"
+  >
+    <div
+      class="slot"
+    >
+      <div
+        class="slot__cell"
+      >
+        0
+      </div>
+      <div
+        class="slot__cell"
+      >
+        1
+      </div>
+      <div
+        class="slot__cell"
+      >
+        2
+      </div>
+      <div
+        class="slot__cell"
+      >
+        3
+      </div>
+      <div
+        class="slot__cell"
+      >
+        4
+      </div>
+      <div
+        class="slot__cell"
+      >
+        5
+      </div>
+      <div
+        class="slot__cell"
+      >
+        6
+      </div>
+      <div
+        class="slot__cell"
+      >
+        7
+      </div>
+      <div
+        class="slot__cell"
+      >
+        8
+      </div>
+      <div
+        class="slot__cell"
+      >
+        9
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

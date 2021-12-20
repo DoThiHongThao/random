@@ -1,0 +1,131 @@
+{
+  "name": "random-number",
+  "homepage": "https://sw999.github.io/random-number",
+  "description": "Simple app to generate random positive integers in a given range",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SW999/random-number"
+  },
+  "version": "1.0.7",
+  "author": "Siarhei Vaitehovich",
+  "keywords": [],
+  "license": "MIT",
+  "main": "src/index.tsx",
+  "scripts": {
+    "clean": "del-cli dist/* .cache/*",
+    "push": "git push --tags origin master",
+    "postinstall": "link-module-alias",
+    "dev": "concurrently -r \"npm:type-check:watch\" \"npm:start\"",
+    "start": "cross-env NODE_ENV=development && npm run clean && npm run type-check && parcel src/index.html --open",
+    "prebuild": "npm version patch",
+    "build": "cross-env NODE_ENV=production && npm run clean && parcel build src/index.html --public-url ./ --no-cache --no-source-maps --experimental-scope-hoisting",
+    "postbuild": "workbox generateSW",
+    "predeploy": "npm run build && git push --follow-tags",
+    "deploy": "gh-pages -d dist",
+    "prettify": "prettier --write \"./src/**/*.{ts,tsx}\"",
+    "type-check": "tsc --noEmit",
+    "lint": "npm run lint:js && npm run lint:scss",
+    "lint:js": "cross-env NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.ts,.tsx,.mjs --report-unused-disable-directives src",
+    "lint:scss": "stylelint \"./src/**/*.scss\" --syntax scss",
+    "type-check:watch": "tsc --noEmit --watch",
+    "test": "cross-env NODE_ENV=test && npm run lint && jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:update": "jest --updateSnapshot"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prettify",
+      "pre-push": "npm run test"
+    }
+  },
+  "_moduleAliases": {
+    "~components": "src/components",
+    "~containers": "src/containers",
+    "~hooks": "src/hooks",
+    "~img": "src/img",
+    "~utils": "src/utils"
+  },
+  "engines": {
+    "node": ">= 8.11.0",
+    "npm": ">= 6.0.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/src/components/**/*.{ts,tsx}",
+      "**/src/containers/**/*.{ts,tsx}"
+    ],
+    "coverageReporters": [
+      "html",
+      "text",
+      "cobertura"
+    ],
+    "preset": "ts-jest",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/tools/setupTests.ts"
+    ],
+    "moduleNameMapper": {
+      ".+\\.(css|scss)$": "<rootDir>/tools/__mocks__/styleMock.ts",
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tools/__mocks__/fileMock.ts"
+    },
+    "testRegex": "(<rootDir>/src/.*|(\\.|/)(test|spec))\\.tsx?$"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@parcel/validator-eslint": "^2.0.0-alpha.3",
+    "@testing-library/jest-dom": "^5.7.0",
+    "@testing-library/react": "^10.0.4",
+    "@testing-library/user-event": "^12.0.6",
+    "@types/jest": "^25.2.2",
+    "@types/node": "^13.13.6",
+    "@types/react": "^16.9.35",
+    "@types/react-dom": "^16.9.8",
+    "@typescript-eslint/eslint-plugin": "^2.33.0",
+    "@typescript-eslint/parser": "^2.33.0",
+    "concurrently": "^5.2.0",
+    "cross-env": "^7.0.2",
+    "cssnano": "^4.1.10",
+    "del-cli": "^3.0.1",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jest-dom": "^2.1.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^1.5.0",
+    "eslint-plugin-testing-library": "^3.1.3",
+    "gh-pages": "^3.0.0",
+    "husky": "^3.1.0",
+    "jest": "^25.5.4",
+    "jest-extended": "^0.11.5",
+    "link-module-alias": "^1.2.0",
+    "markdown-to-jsx": "^6.11.4",
+    "node-sass": "^4.14.1",
+    "parcel-bundler": "1.12.4",
+    "prettier": "^2.0.5",
+    "react-test-renderer": "^16.13.1",
+    "regenerator-runtime": "^0.13.5",
+    "sass": "1.23.3",
+    "stylelint": "^13.7.1",
+    "stylelint-config-recommended": "^3.0.0",
+    "stylelint-prettier": "^1.1.2",
+    "stylelint-scss": "^3.18.0",
+    "ts-jest": "^25.5.1",
+    "tslint": "^5.20.1",
+    "tslint-config-airbnb": "^5.11.2",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-react": "^4.1.0",
+    "tslint-react-hooks": "^2.2.2",
+    "typescript": "3.8.3",
+    "workbox-cli": "^6.0.2"
+  }
+}

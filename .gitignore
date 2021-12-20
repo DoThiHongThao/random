@@ -1,0 +1,10 @@
+coverage/
+dist/
+.cache/
+node_modules/
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+.env*

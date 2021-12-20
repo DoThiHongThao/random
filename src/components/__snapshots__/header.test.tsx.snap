@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component Header should take a snapshot: Header 1`] = `
+<DocumentFragment>
+  <h1>
+    Random number generator 
+    <sup
+      class="warning tooltip"
+      data-tooltip="Generator of random positive integers in a given range"
+    >
+      *
+    </sup>
+  </h1>
+</DocumentFragment>
+`;

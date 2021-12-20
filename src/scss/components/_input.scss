@@ -1,0 +1,106 @@
+.form {
+  &-group {
+    position: relative;
+    display: flex;
+    max-width: calc(100% - 2rem);
+    margin-left: 1rem;
+    margin-top: 1.8rem;
+    margin-bottom: .5rem;
+
+    @include mq(tablet) {
+      max-width: calc(50% - 2.3rem);
+      margin-left: 0;
+      margin-top: 2.5rem;
+      margin-bottom: 2.5rem;
+
+      &:not(:nth-child(1)) {
+        margin-left: 2.3rem;
+      }
+    }
+
+    .validation-text {
+      position: absolute;
+      bottom: -2.8rem;
+      flex: 0 1 100%;
+      color: $white;
+      font-size: 2rem;
+      text-shadow: 1px 1px 1px $grey-darken;
+    }
+  }
+
+  &-input,
+  &-label {
+    height: 8rem;
+    padding: .5em .75em;
+    border: 1px solid $grey;
+    overflow: hidden;
+    color: $white;
+    font-size: 3rem;
+  }
+
+  &-input {
+    flex: 1;
+    max-width: 20rem;
+    border-left: 0;
+    border-radius: 0 8px 8px 0;
+    text-align: right;
+    background-color: $grey-dark;
+
+    &:disabled {
+      background: darken($grey, 5%);
+      cursor: not-allowed;
+    }
+  }
+
+  &-label {
+    width: 11.6rem;
+    border-right: 0;
+    border-radius: 8px 0 0 8px;
+    font-weight: 400;
+    text-align: center;
+    background: linear-gradient(#1b1b1b 0%,#383838 13%,#4e4e4e 24%,#0a0a0a 53%);
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+button {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  padding: 1.6rem 3.6rem;
+  border: thin solid $grey-dark;
+  border-radius: 8px;
+  overflow: hidden;
+  color: lighten($grey, 10%);
+  font-size: 3rem;
+  cursor: not-allowed;
+  background: darken($grey, 5%);
+  transition: background .6s ease-in;
+
+  @include mq(tablet) {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    padding: 1.6rem 4.8rem;
+    font-size: 3rem;
+  }
+
+  &:not(:disabled) {
+    border-color: $grey;
+    cursor: pointer;
+    color: $white;
+    animation: pulse .9s 2;
+    background: linear-gradient($grey 0%, $grey-dark, 40%, $black-lighten 100%);
+  }
+
+  &:active {
+    background: linear-gradient($black-lighten 0%, $grey-dark, 40%, $grey 100%);
+  }
+}

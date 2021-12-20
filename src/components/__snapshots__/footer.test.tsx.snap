@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer component Footer in a portal should take a snapshot 1`] = `
+<body>
+  <div
+    id="footer"
+  >
+    <span>
+      <a
+        href="https://github.com/SW999/random-number"
+        rel="nofollow"
+        title="Github page"
+      >
+        <img
+          alt="github"
+          height="24"
+          src="[object Object]"
+          width="24"
+        />
+      </a>
+       
+      | Siarhei Vaitehovich | 
+      v. 1.0.0
+    </span>
+  </div>
+  <div />
+</body>
+`;
